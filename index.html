@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- Declaração do tipo de documento para HTML5 moderno -->
+<html lang="pt">
+<head>
+    <!-- Configuração de codificação de caracteres para suportar acentos da língua portuguesa -->
+    <meta charset="UTF-8">
+    <!-- Garante que a página seja responsiva e se ajuste corretamente a telemóveis e computadores -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Académico Redesenhado - UnISCED</title>
+    <!-- Ligação ao ficheiro de estilos externos (CSS) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Principal da Instituição -->
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="brand">
+                <h1>UnISCED</h1>
+                <span>Universidade Aberta | Ensino a Distância</span>
+            </div>
+            <!-- Menu de navegação superior -->
+            <nav class="main-nav">
+                <a href="#catalogo">Cursos e Serviços</a>
+                <a href="#admin">Gerir Registos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal da Aplicação -->
+    <main class="container">
+        
+        <!-- Secção de Destaque / Boas-vindas -->
+        <section class="hero-section">
+            <h2>Portal do Estudante e Catálogo Académico</h2>
+            <p>Consulte os cursos de licenciatura, mestrado e serviços de apoio ao estudante da UnISCED de forma rápida e responsiva.</p>
+        </section>
+
+        <!-- Barra de Controlo: Pesquisa e Ordenação (Funcionalidade Interativa) -->
+        <section class="controls-section">
+            <div class="search-box">
+                <!-- Campo de input para busca em tempo real via JavaScript -->
+                <input type="text" id="searchInput" placeholder="Pesquisar por nome de curso, faculdade ou serviço...">
+            </div>
+            <div class="sort-box">
+                <!-- Dropdown para ordenar os itens por critérios específicos -->
+                <select id="sortSelect">
+                    <option value="">Ordenar por...</option>
+                    <option value="name-asc">Nome do Curso (A-Z)</option>
+                    <option value="price-asc">Mensalidade (Menor para Maior)</option>
+                    <option value="date-desc">Mais Recentes</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Formulário Administrativo: Adicionar novos registos ao sistema -->
+        <section id="admin" class="form-section">
+            <h3>Adicionar Novo Curso ou Serviço Académico</h3>
+            <form id="itemForm">
+                <input type="text" id="itemName" placeholder="Ex: Licenciatura em Engenharia Informática" required>
+                <input type="text" id="itemCategory" placeholder="Ex: Faculdade de Tecnologias" required>
+                <input type="number" id="itemPrice" placeholder="Mensalidade (MT)" step="100" required>
+                <button type="submit" class="btn-primary">Adicionar Registo</button>
+            </form>
+        </section>
+
+        <!-- Grelha Dinâmica: Onde o JavaScript irá injetar os cartões de cursos -->
+        <section id="catalogo" class="catalog-section">
+            <h3>Oferta Formativa e Serviços</h3>
+            <div id="itemsGrid" class="grid-container">
+                <!-- Os dados são gerados dinamicamente pelo script.js -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé Institucional -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 - Tr•abalho Prático de Tecnologias Web | Redesenho do Portal UnISCED.</p>
+        </div>
+    </footer>
+
+    <!-- Ligação ao script de comportamento em JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

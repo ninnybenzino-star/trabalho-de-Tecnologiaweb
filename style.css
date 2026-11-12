@@ -1,0 +1,226 @@
+/* Definição de variáveis globais de cores e raios para manter consistência visual */
+:root {
+    --primary-color: #0b2545;   /* Azul institucional escuro */
+    --secondary-color: #134074; /* Azul secundário */
+    --accent-color: #8da9c4;    /* Azul claro de destaque */
+    --highlight-color: #ee6c4d; /* Cor de destaque para botões e preços */
+    --bg-color: #eeeff2;        /* Cor de fundo cinza clara */
+    --white: #ffffff;
+    --text-dark: #1d2d44;       /* Cor de texto principal */
+    --radius: 8px;              /* Arredondamento padrão dos cantos */
+}
+
+/* Reset universal: remove margens/paddings padrão e define o modelo de caixa */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Contentor centralizado para limitar a largura máxima do site */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilização do Cabeçalho */
+.site-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--highlight-color);
+}
+
+/* Secção Hero (Destaque inicial) */
+.hero-section {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    margin: 25px 0;
+    text-align: center;
+}
+
+/* Controlo de Busca e Ordenação (Layout Flexbox) */
+.controls-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.search-box input, .sort-box select, .form-section input {
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    width: 100%;
+    background: var(--white);
+}
+
+.search-box { flex: 2; }
+.sort-box { flex: 1; }
+
+/* Formulário de Registo */
+.form-section {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.form-section h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+/* Grid layout avançado para os inputs do formulário */
+.form-section form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 12px;
+}
+
+.btn-primary {
+    background-color: var(--highlight-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover { background-color: #d85c3c; }
+
+/* Grelha de Cursos e Serviços (CSS Grid adaptativo) */
+.catalog-section h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 8px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Cartões individuais */
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    background: #e2e8f0;
+    color: var(--secondary-color);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card h4 {
+    color: var(--primary-color);
+    margin: 12px 0 8px 0;
+    font-size: 1.2rem;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--highlight-color);
+    font-size: 1.15rem;
+    margin: 10px 0;
+}
+
+.btn-delete {
+    background-color: #ef4444;
+    color: var(--white);
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-delete:hover { background-color: #dc2626; }
+
+/* Rodapé */
+.site-footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* Responsividade com Media Query (Para ecrãs menores de 768px, como telemóveis) */
+@media (max-width: 768px) {
+    .form-section form {
+        grid-template-columns: 1fr; /* Transforma o formulário numa coluna única */
+    }
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    .main-nav a { margin: 0 10px; }
+    .controls-section { flex-direction: column; }
+}
